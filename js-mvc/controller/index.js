@@ -14,10 +14,9 @@ function controller(view, model) {
     },
 
     validateData(data) {
-      if(Object.keys(data).length === 0) return false;
-      for(const key in data) {
-          if(data[key] === "") return false;
-
+      if (Object.keys(data).length === 0) return false;
+      for (const key in data) {
+        if (data[key] === "") return false;
       }
       return true;
     },
@@ -27,7 +26,7 @@ function controller(view, model) {
 
       model.changeCompleted(itemId, dbKey, status);
     },
-    
+
     removeElement(elementId, dbKey) {
       if (!elementId) throw new Error("No elementId");
       model.deleteItem(elementId, dbKey);

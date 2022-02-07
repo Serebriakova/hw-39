@@ -45,7 +45,7 @@ const view = {
 
   formHandler(event) {
     event.preventDefault();
-    ++this.currentItemId; 
+    ++this.currentItemId;
     let data = Array.from(
       event.target.querySelectorAll("input, textarea")
     ).reduce((acc, item) => {
@@ -62,14 +62,13 @@ const view = {
 
   appendData() {
     const data = this.controller.getData(this.formId);
-    this.controller.validateData(data);
-    
+
     let i = 0;
     for (const todoItem of data) {
-    setTimeout( () => {
-      this.todoContainer.prepend(this.createTemplate(todoItem))
-     }, 100+200*i++);
-     this.currentItemId = todoItem.itemId;
+      setTimeout(() => {
+        this.todoContainer.prepend(this.createTemplate(todoItem));
+      }, 100 + 200 * i++);
+      this.currentItemId = todoItem.itemId;
     }
   },
 
@@ -143,4 +142,4 @@ const view = {
     this.setEvents();
   },
 };
-s
+s;

@@ -16,7 +16,7 @@ const model = {
 
   getData(dbKey) {
     const iterateData = JSON.parse(localStorage.getItem(dbKey));
-    return (function* iterateObjData () {
+    return (function* iterateObjData() {
       for (const itemId in iterateData) {
         yield iterateData[itemId];
       }
